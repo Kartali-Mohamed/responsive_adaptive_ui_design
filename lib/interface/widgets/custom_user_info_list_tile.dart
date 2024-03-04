@@ -12,16 +12,13 @@ class CustomUserInfoListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 15),
-      child: Card(
-        color: const Color(0xFFFAFAFA),
-        elevation: 0,
-        child: ListTile(
-          leading: SvgPicture.asset(image),
-          title: Text(title, style: AppStyles.styleSemiBold16),
-          subtitle: Text(subtitle, style: AppStyles.styleRegular12),
-        ),
+    return Card(
+      color: const Color(0xFFFAFAFA),
+      elevation: 0,
+      child: ListTile(
+        leading: SvgPicture.asset(image),
+        title: Text(title, style: AppStyles.styleSemiBold16),
+        subtitle: Text(subtitle, style: AppStyles.styleRegular12),
       ),
     );
   }
