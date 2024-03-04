@@ -37,12 +37,9 @@ class _CustomItemsDrawerListViewState extends State<CustomItemsDrawerListView> {
                   });
                 }
               },
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: CustomItemDrawer(
-                  itemDrawerModel: items[index],
-                  isActive: activeIndex == index,
-                ),
+              child: CustomItemDrawer(
+                itemDrawerModel: items[index],
+                isActive: activeIndex == index,
               ),
             ));
   }
