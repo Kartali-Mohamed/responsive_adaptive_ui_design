@@ -16,7 +16,7 @@ class IncomeSection extends StatelessWidget {
           CustomHeaderIncome(),
           SizedBox(height: 16),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(child: CustomChartIncome()),
               SizedBox(width: 40),
