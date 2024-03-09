@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_adaptive_ui_design/interface/widgets/custom_background_container.dart';
-import 'package:responsive_adaptive_ui_design/interface/widgets/income/custom_chart_income.dart';
-import 'package:responsive_adaptive_ui_design/interface/widgets/income/custom_details_income.dart';
 import 'package:responsive_adaptive_ui_design/interface/widgets/income/custom_header_income.dart';
+
+import 'custom_income_body.dart';
 
 class IncomeSection extends StatelessWidget {
   const IncomeSection({super.key});
@@ -15,14 +15,7 @@ class IncomeSection extends StatelessWidget {
         children: [
           CustomHeaderIncome(),
           SizedBox(height: 16),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(child: CustomChartIncome()),
-              SizedBox(width: 40),
-              Expanded(flex: 2, child: CustomDetailsIncome())
-            ],
-          ),
+          CustomIncomeBody(),
         ],
       ),
     );
