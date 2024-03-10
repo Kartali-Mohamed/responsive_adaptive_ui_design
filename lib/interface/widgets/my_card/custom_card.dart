@@ -28,56 +28,38 @@ class CustomCard extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding:
-                    const EdgeInsets.only(left: 31, right: 40, top: 20),
+                    const EdgeInsets.only(left: 31, right: 40, top: 16),
                 title: Text(
                   "Name card",
-                  style: AppStyles.styleRegular16.copyWith(color: Colors.white),
+                  style: AppStyles.styleRegular16(context)
+                      .copyWith(color: Colors.white),
                 ),
-                subtitle: const Text(
+                subtitle: Text(
                   "Syah Bandi",
-                  style: AppStyles.styleMedium20,
+                  style: AppStyles.styleMedium20(context),
                 ),
                 trailing: SvgPicture.asset(Assets.imagesGallery),
               ),
               const Expanded(child: SizedBox()),
               Padding(
-                padding: const EdgeInsets.only(bottom: 27, right: 24),
+                padding: const EdgeInsets.only(right: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       '0918 8124 0042 8129',
-                      style: AppStyles.styleSemiBold24
+                      style: AppStyles.styleSemiBold24(context)
                           .copyWith(color: Colors.white),
                     ),
-                    const SizedBox(width: 17),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '12/20',
-                          style: AppStyles.styleRegular16
-                              .copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          '-',
-                          style: AppStyles.styleRegular16
-                              .copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          '124',
-                          style: AppStyles.styleRegular16
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
+                    Text(
+                      '12/20 - 124',
+                      style: AppStyles.styleRegular16(context)
+                          .copyWith(color: Colors.white),
                     ),
                   ],
                 ),
-              )
+              ),
+              const Flexible(child: SizedBox(height: 26)),
             ],
           ),
         ));
