@@ -20,10 +20,10 @@ double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
 double getScaleFactor(BuildContext context) {
   if (context.screenWidth < SizeConfig.tablet) {
     return context.screenWidth /
-        600; // This Point is Changeable Depends on Project
+        550; // This Point is Changeable Depends on Project
   } else if (context.screenWidth < SizeConfig.desktop) {
     return context.screenWidth /
-        1050; // This Point is Changeable Depends on Project
+        1000; // This Point is Changeable Depends on Project
   } else {
     return context.screenWidth /
         1920; // This Point is Changeable Depends on Project
