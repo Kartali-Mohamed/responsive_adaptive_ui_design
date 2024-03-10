@@ -20,21 +20,30 @@ class CustomAllExpensesActiveItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
         color: const Color(0xFF4EB7F2),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: const BorderSide(width: 1, color: Color(0xFF4EB7F2))),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(
           children: [
-            Container(
-                width: 60,
-                height: 60,
-                padding: const EdgeInsets.all(14),
-                decoration: ShapeDecoration(
-                    color: Colors.white.withOpacity(0.10000000149011612),
-                    shape: const OvalBorder()),
-                child: SvgPicture.asset(itemAllExpensesModel.image,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn))),
+            Flexible(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minWidth: 60, maxHeight: 60),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Container(
+                      decoration: ShapeDecoration(
+                          color: Colors.white.withOpacity(0.10000000149011612),
+                          shape: const OvalBorder()),
+                      child: Center(
+                        child: SvgPicture.asset(itemAllExpensesModel.image,
+                            colorFilter: const ColorFilter.mode(
+                                Colors.white, BlendMode.srcIn)),
+                      )),
+                ),
+              ),
+            ),
             const Spacer(),
             Transform.rotate(
                 angle: pi,
@@ -43,17 +52,26 @@ class CustomAllExpensesActiveItem extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 34),
-        Text(itemAllExpensesModel.title,
-            style:
-                AppStyles.styleMedium16(context).copyWith(color: Colors.white)),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(itemAllExpensesModel.title,
+              style: AppStyles.styleMedium16(context)
+                  .copyWith(color: Colors.white)),
+        ),
         const SizedBox(height: 8),
-        Text(itemAllExpensesModel.date,
-            style: AppStyles.styleRegular14(context)
-                .copyWith(color: const Color(0xFFFAFAFA))),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(itemAllExpensesModel.date,
+              style: AppStyles.styleRegular14(context)
+                  .copyWith(color: const Color(0xFFFAFAFA))),
+        ),
         const SizedBox(height: 16),
-        Text(itemAllExpensesModel.date,
-            style: AppStyles.styleSemiBold24(context)
-                .copyWith(color: Colors.white)),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(itemAllExpensesModel.price,
+              style: AppStyles.styleSemiBold24(context)
+                  .copyWith(color: Colors.white)),
+        ),
       ]),
     );
   }

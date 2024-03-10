@@ -34,31 +34,75 @@ class _CustomAllExpensesListState extends State<CustomAllExpensesList> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      // children: list.map((e) => Expanded(child: CustomAllExpensesItem(itemAllExpensesModel: e))).toList(),
-      children: items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
-
-        return Expanded(
-            child: Padding(
-          padding: index == 2
-              ? const EdgeInsets.all(0)
-              : const EdgeInsets.only(right: 12),
-          child: GestureDetector(
-            onTap: () {
-              if (activeIndex != index) {
-                setState(() {
-                  activeIndex = index;
-                });
-              }
-            },
-            child: CustomAllExpensesItem(
-              itemAllExpensesModel: item,
-              isSelected: activeIndex == index,
-            ),
+      children: [
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            if (activeIndex != 0) {
+              setState(() {
+                activeIndex = 0;
+              });
+            }
+          },
+          child: CustomAllExpensesItem(
+            itemAllExpensesModel: items[0],
+            isSelected: activeIndex == 0,
           ),
-        ));
-      }).toList(),
+        )),
+        const SizedBox(width: 12),
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            if (activeIndex != 1) {
+              setState(() {
+                activeIndex = 1;
+              });
+            }
+          },
+          child: CustomAllExpensesItem(
+            itemAllExpensesModel: items[1],
+            isSelected: activeIndex == 1,
+          ),
+        )),
+        const SizedBox(width: 12),
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            if (activeIndex != 2) {
+              setState(() {
+                activeIndex = 2;
+              });
+            }
+          },
+          child: CustomAllExpensesItem(
+            itemAllExpensesModel: items[2],
+            isSelected: activeIndex == 2,
+          ),
+        )),
+      ],
     );
+
+    // Row(
+    //   // children: list.map((e) => Expanded(child: CustomAllExpensesItem(itemAllExpensesModel: e))).toList(),
+    //   children: items.asMap().entries.map((e) {
+    //     int index = e.key;
+    //     var item = e.value;
+
+    //     return Expanded(
+    //         child: GestureDetector(
+    //           onTap: () {
+    //             if (activeIndex != index) {
+    //               setState(() {
+    //                 activeIndex = index;
+    //               });
+    //             }
+    //           },
+    //           child: CustomAllExpensesItem(
+    //             itemAllExpensesModel: item,
+    //             isSelected: activeIndex == index,
+    //           ),
+    //         ));
+    //   }).toList(),
+    // );
   }
 }

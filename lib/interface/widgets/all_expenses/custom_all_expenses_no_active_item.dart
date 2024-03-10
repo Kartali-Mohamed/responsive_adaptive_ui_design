@@ -27,13 +27,18 @@ class CustomAllExpensesNoActiveItem extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(
           children: [
-            Container(
-                width: 60,
-                height: 60,
-                padding: const EdgeInsets.all(14),
-                decoration: const ShapeDecoration(
-                    color: Color(0xFFFAFAFA), shape: OvalBorder()),
-                child: SvgPicture.asset(itemAllExpensesModel.image)),
+            Flexible(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minWidth: 60, maxHeight: 60),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Container(
+                      decoration: const ShapeDecoration(
+                          color: Color(0xFFFAFAFA), shape: OvalBorder()),
+                      child: SvgPicture.asset(itemAllExpensesModel.image)),
+                ),
+              ),
+            ),
             const Spacer(),
             Transform.rotate(
                 angle: pi,
@@ -42,14 +47,23 @@ class CustomAllExpensesNoActiveItem extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 34),
-        Text(itemAllExpensesModel.title,
-            style: AppStyles.styleMedium16(context)),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(itemAllExpensesModel.title,
+              style: AppStyles.styleMedium16(context)),
+        ),
         const SizedBox(height: 8),
-        Text(itemAllExpensesModel.date,
-            style: AppStyles.styleRegular14(context)),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(itemAllExpensesModel.date,
+              style: AppStyles.styleRegular14(context)),
+        ),
         const SizedBox(height: 16),
-        Text(itemAllExpensesModel.date,
-            style: AppStyles.styleSemiBold24(context)),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(itemAllExpensesModel.price,
+              style: AppStyles.styleSemiBold24(context)),
+        ),
       ]),
     );
   }
