@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_adaptive_ui_design/interface/widgets/income/custom_chart_income_detail.dart';
 import 'package:responsive_adaptive_ui_design/utils/size_config.dart';
 
 import 'custom_chart_income.dart';
@@ -13,7 +14,11 @@ class CustomIncomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return context.screenWidth >= SizeConfig.desktop &&
             context.screenWidth < 1640
-        ? const SizedBox()
+        ? const Expanded(
+            child: Padding(
+            padding: EdgeInsets.all(16),
+            child: CustomChartIncomeDetail(),
+          ))
         : const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
