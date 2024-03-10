@@ -16,7 +16,10 @@ class CustomInActiveItemDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(itemDrawerModel.image),
-      title: Text(itemDrawerModel.title, style: AppStyles.styleMedium16),
+      title: Text(itemDrawerModel.title,
+          style: AppStyles.styleMedium16(context),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis),
     );
   }
 }

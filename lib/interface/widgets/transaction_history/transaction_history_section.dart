@@ -15,7 +15,7 @@ class TransactionHistorySection extends StatelessWidget {
         const CustomHeaderTransaction(),
         const SizedBox(height: 20),
         Text("13 April 2022",
-            style: AppStyles.styleMedium16
+            style: AppStyles.styleMedium16(context)
                 .copyWith(color: const Color(0xFFAAAAAA))),
         const SizedBox(height: 16),
         const CustomListItemsTransaction(),

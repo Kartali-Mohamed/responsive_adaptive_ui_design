@@ -13,12 +13,12 @@ class CustomHeaderTransaction extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Text('Transaction History', style: AppStyles.styleSemiBold20),
+        Text('Transaction History', style: AppStyles.styleSemiBold20(context)),
         const SizedBox(width: 24),
         Text(
           'See all',
-          style:
-              AppStyles.styleMedium16.copyWith(color: const Color(0xFF4EB7F2)),
+          style: AppStyles.styleMedium16(context)
+              .copyWith(color: const Color(0xFF4EB7F2)),
         ),
       ],
     );

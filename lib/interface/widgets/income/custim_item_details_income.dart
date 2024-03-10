@@ -18,12 +18,12 @@ class CustomItemDetailsIncome extends StatelessWidget {
             shape: const OvalBorder(),
           )),
       title: Text(itemDetailIncome.title,
-          style: AppStyles.styleRegular16,
+          style: AppStyles.styleRegular16(context),
           maxLines: 1,
           overflow: TextOverflow.ellipsis),
       trailing: Text("${itemDetailIncome.value}%",
-          style:
-              AppStyles.styleMedium16.copyWith(color: const Color(0xFF208CC8))),
+          style: AppStyles.styleMedium16(context)
+              .copyWith(color: const Color(0xFF208CC8))),
     );
   }
 }

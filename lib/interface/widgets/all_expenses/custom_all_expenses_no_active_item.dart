@@ -42,11 +42,14 @@ class CustomAllExpensesNoActiveItem extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 34),
-        Text(itemAllExpensesModel.title, style: AppStyles.styleMedium16),
+        Text(itemAllExpensesModel.title,
+            style: AppStyles.styleMedium16(context)),
         const SizedBox(height: 8),
-        Text(itemAllExpensesModel.date, style: AppStyles.styleRegular14),
+        Text(itemAllExpensesModel.date,
+            style: AppStyles.styleRegular14(context)),
         const SizedBox(height: 16),
-        Text(itemAllExpensesModel.date, style: AppStyles.styleSemiBold24),
+        Text(itemAllExpensesModel.date,
+            style: AppStyles.styleSemiBold24(context)),
       ]),
     );
   }

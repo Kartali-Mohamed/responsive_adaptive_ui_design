@@ -19,6 +19,6 @@ class CustomButtonFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        child: const Text('Send Money', style: AppStyles.styleSemiBold18));
+        child: Text('Send Money', style: AppStyles.styleSemiBold18(context)));
   }
 }

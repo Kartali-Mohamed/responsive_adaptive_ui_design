@@ -20,7 +20,7 @@ class CustomTextButtonFormField extends StatelessWidget {
           ),
         ),
         child: Text('Add more details',
-            style: AppStyles.styleSemiBold18
+            style: AppStyles.styleSemiBold18(context)
                 .copyWith(color: const Color(0xFF4EB7F2))));
   }
 }
